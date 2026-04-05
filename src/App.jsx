@@ -26,8 +26,13 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Page = styled.main`
-  width: min(980px, 100% - 2rem);
-  margin: 2rem auto;
+  width: min(980px, 100% - 1.5rem);
+  margin: 1.5rem auto;
+
+  @media (max-width: 480px) {
+    width: min(980px, 100% - 1rem);
+    margin: 1rem auto;
+  }
 `
 
 const Header = styled.header`
@@ -79,7 +84,7 @@ const Field = styled.label`
     border: 1px solid #b7c5d3;
     border-radius: 10px;
     padding: 0.65rem 0.75rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
     outline: none;
     transition: border-color 0.2s ease;
   }
@@ -93,12 +98,22 @@ const ButtonRow = styled.div`
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
 `
 
 const Button = styled.button`
   border: none;
   border-radius: 10px;
   padding: 0.6rem 0.9rem;
+  min-height: 44px;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   color: #fff;
@@ -145,6 +160,7 @@ const ContactItem = styled.li`
   p {
     margin: 0.25rem 0;
     color: #3e4d5c;
+    word-break: break-word;
   }
 `
 
